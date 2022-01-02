@@ -1,5 +1,8 @@
 # Spotify Library
 
+![npm](https://img.shields.io/npm/v/spotify-library) ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/eegli/spotify-auth-token/ci-unit-tests/main)
+[![codecov](https://codecov.io/gh/eegli/spotify-library/branch/main/graph/badge.svg?token=KU0SAWVF89)](https://codecov.io/gh/eegli/spotify-library)
+
 ### Export your Spotify library to JSON
 
 You will need an access token from Spotify. There are multiple ways to get a token:
