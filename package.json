@@ -1,6 +1,6 @@
 {
   "name": "spotify-library",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "description": "Get your Spotify library via CLI",
   "keywords": [
