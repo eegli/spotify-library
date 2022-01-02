@@ -1,6 +1,6 @@
 import fs from 'fs';
+import { defaultConfig } from '../src/config';
 import { chunkify, write } from '../src/utils';
-
 const mockFS = fs as jest.Mocked<typeof fs>;
 
 beforeEach(() => {
@@ -19,6 +19,7 @@ describe('Utils', () => {
   });
 
   const writeParams: Parameters<typeof write>[] = [
+    [defaultConfig.outDir, 'test', { data: true }],
     ['tmp', 'test', { data: true }],
     ['tmp/dir', 'test.json', { data: true }],
     ['/tmp/dir/', 'test', { data: true }],
