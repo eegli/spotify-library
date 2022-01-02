@@ -21,13 +21,13 @@ This will download your Spotify library in a "light" format to the current worki
 
 ### CLI options
 
-| Flag         | Required                      | Options            | Description                                                 |
-| ------------ | ----------------------------- | ------------------ | ----------------------------------------------------------- |
-| `--token`    | ✅                            | -                  | Spotify authentication token                                |
-| `--type`     | ❌ - default: `normal`        | `normal` \| `full` | Full or "light" library output                              |
-| `--genres`   | ❌ - default: `false`         | -                  | Include if you want genres                                  |
-| `--features` | ❌ - default: `false`         | -                  | Include if you want audio features                          |
-| `--outDir`   | ❌ - default: `process.cwd()` | String             | Custom output directory relative to where the script is run |
+| Flag         | Required               | Options            | Description                                                 |
+| ------------ | ---------------------- | ------------------ | ----------------------------------------------------------- |
+| `--token`    | ✅                     | -                  | Spotify authentication token                                |
+| `--type`     | ❌ - default: `normal` | `normal` \| `full` | Full or "light" library output                              |
+| `--genres`   | ❌ - default: `false`  | -                  | Include if you want genres                                  |
+| `--features` | ❌ - default: `false`  | -                  | Include if you want audio features                          |
+| `--outDir`   | ❌ - default: `""`     | String             | Custom output directory relative to where the script is run |
 
 The "light" output has the following track properties:
 
