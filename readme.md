@@ -28,8 +28,8 @@ This will download your Spotify library in a "light" format to the current worki
 | ------------ | ---------------------------- | ----------------------------------------------------------- |
 | `--token`    | ✅                           | Spotify authentication token                                |
 | `--type`     | ❌ - `normal` (opts: `full`) | Full or "light" library output                              |
-| `--genres`   | ❌ - `false`                 | Append if you want genres                                   |
-| `--features` | ❌ - `false`                 | Append if you want audio features                           |
+| `--genres`   | ❌ - n.a.                    | Append if you want genres                                   |
+| `--features` | ❌ - n.a.                    | Append if you want audio features                           |
 | `--outDir`   | ❌ - `""`                    | Custom output directory relative to where the script is run |
 
 The "light" output has the following track properties:
