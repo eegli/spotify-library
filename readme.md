@@ -24,13 +24,13 @@ This will download your Spotify library in a "light" format to the current worki
 
 ### CLI options
 
-| Flag         | Required               | Options            | Description                                                 |
-| ------------ | ---------------------- | ------------------ | ----------------------------------------------------------- |
-| `--token`    | ✅                     | -                  | Spotify authentication token                                |
-| `--type`     | ❌ - default: `normal` | `normal` \| `full` | Full or "light" library output                              |
-| `--genres`   | ❌ - default: `false`  | -                  | Include if you want genres                                  |
-| `--features` | ❌ - default: `false`  | -                  | Include if you want audio features                          |
-| `--outDir`   | ❌ - default: `""`     | String             | Custom output directory relative to where the script is run |
+| Flag         | Required (default, [opts])   | Description                                                 |
+| ------------ | ---------------------------- | ----------------------------------------------------------- |
+| `--token`    | ✅                           | Spotify authentication token                                |
+| `--type`     | ❌ - `normal` (opts: `full`) | Full or "light" library output                              |
+| `--genres`   | ❌ - `false`                 | Append if you want genres                                   |
+| `--features` | ❌ - `false`                 | Append if you want audio features                           |
+| `--outDir`   | ❌ - `""`                    | Custom output directory relative to where the script is run |
 
 The "light" output has the following track properties:
 
@@ -65,5 +65,5 @@ npx spotify-library@latest --token 123token
 - Full library with genres and audio features
 
 ```bash
-npx spotify-library@latest --genres --features --type full --outDir spotify-data --token 123token
+npx spotify-library@latest --type full --genres --features  --outDir spotify-data --token 123token
 ```
