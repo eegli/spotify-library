@@ -4,7 +4,7 @@ exports[`createConfig valid config #0 1`] = `
 Object {
   "features": false,
   "genres": false,
-  "outDir": "/usr/projects/stuff",
+  "outDir": "",
   "token": "123",
   "type": "normal",
 }
@@ -14,7 +14,7 @@ exports[`createConfig valid config #1 1`] = `
 Object {
   "features": false,
   "genres": false,
-  "outDir": "/usr/projects/stuff",
+  "outDir": "",
   "token": "123",
   "type": "full",
 }
@@ -24,7 +24,7 @@ exports[`createConfig valid config #2 1`] = `
 Object {
   "features": false,
   "genres": false,
-  "outDir": "/usr/projects/stuff",
+  "outDir": "",
   "token": "123",
   "type": "normal",
 }
@@ -34,7 +34,7 @@ exports[`createConfig valid config #3 1`] = `
 Object {
   "features": false,
   "genres": false,
-  "outDir": "/usr/projects/stuff",
+  "outDir": "",
   "token": "123",
   "type": "normal",
 }
@@ -44,7 +44,7 @@ exports[`createConfig valid config #4 1`] = `
 Object {
   "features": true,
   "genres": true,
-  "outDir": "/usr/projects/stuff",
+  "outDir": "",
   "token": "123",
   "type": "normal",
 }

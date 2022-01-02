@@ -6,7 +6,7 @@ export const defaultConfig: AppConfig = {
   type: 'normal',
   genres: false,
   features: false,
-  outDir: process.cwd(),
+  outDir: '',
 };
 
 export const createConfig = (args: string[]): AppConfig => {

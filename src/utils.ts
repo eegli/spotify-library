@@ -10,13 +10,14 @@ export function hasOwnProperty<
 }
 
 export function write(path: string, fileName: string, data: unknown): string {
+  path = join(process.cwd(), path);
   if (!fs.existsSync(path)) {
     fs.mkdirSync(path, { recursive: true });
   }
   if (fileName.endsWith('.json')) {
     fileName = fileName.slice(0, -5);
   }
-  path = join(process.cwd(), path, fileName + '.json');
+  path = join(path, fileName + '.json');
   fs.writeFileSync(path, JSON.stringify(data, null, 2));
   return path;
 }
