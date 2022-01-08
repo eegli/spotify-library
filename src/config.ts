@@ -9,4 +9,6 @@ export const defaultConfig: AppConfig = {
   outDir: '',
 };
 
-export const parseConfig = parserFactory(defaultConfig);
+export const parseConfig = parserFactory(defaultConfig, {
+  required: ['token'],
+});

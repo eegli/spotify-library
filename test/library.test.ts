@@ -15,7 +15,11 @@ beforeEach(() => {
 });
 
 describe('Library', () => {
-  it('basic library', async () => {
+  it('rejects on missing auth token', async () => {
+    process.argv = ['', ''];
+    await expect(library()).rejects.toThrow();
+  });
+  it('gets library', async () => {
     process.argv = ['', '', '--token', '123x', '--type', 'normal'];
     mockAxios.get.mockResolvedValueOnce(RES_USER_SAVED_TRACKS);
     const res = await library();

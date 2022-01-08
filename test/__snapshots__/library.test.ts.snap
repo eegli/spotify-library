@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Library basic library 1`] = `
+exports[`Library gets library 1`] = `
 Array [
   Object {
     "added_at": "2021-09-30T22:04:57Z",
