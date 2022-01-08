@@ -1,3 +1,4 @@
+import { ValidationError } from '@eegli/tinyparse';
 import axios from 'axios';
 import { parseConfig } from './config';
 import type {
@@ -9,10 +10,9 @@ import type {
   UsersSavedTracks,
 } from './types';
 import { chunkify, createProgressBar, goodbye, write } from './utils';
-
 export async function library(): Promise<Library<TrackLight | TrackFull>> {
-  const config = await parseConfig(process.argv.slice(2));
   try {
+    const config = await parseConfig(process.argv.slice(2));
     let library: Library<TrackFull | TrackLight> = [];
     let progress = createProgressBar('user library');
 
@@ -141,6 +141,9 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
     console.info("Success! Library written to '%s'", outDir);
     return library;
   } catch (e) {
+    if (e instanceof ValidationError) {
+      goodbye(e.message);
+    }
     goodbye('Something went wrong: ' + e);
   }
 }
