@@ -1,4 +1,12 @@
-jest.mock('fs');
+jest.mock('fs', () => {
+  return {
+    existsSync: jest.fn(),
+    promises: {
+      mkdir: jest.fn(),
+      writeFile: jest.fn(),
+    },
+  };
+});
 jest.mock('axios');
 
 jest.spyOn(global.console, 'info').mockImplementation(jest.fn());

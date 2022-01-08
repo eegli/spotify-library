@@ -1,24 +1,21 @@
 import cliProgress from 'cli-progress';
-import fs from 'fs';
+import { existsSync, promises as fs } from 'fs';
 import { join } from 'path';
 
-export function hasOwnProperty<
-  T extends Record<PropertyKey, unknown>,
-  K extends PropertyKey
->(obj: T, prop: K): obj is T & Record<K, unknown> {
-  return Object.prototype.hasOwnProperty.call(obj, prop);
-}
-
-export function write(path: string, fileName: string, data: unknown): string {
+export async function write(
+  path: string,
+  fileName: string,
+  data: unknown
+): Promise<string> {
   path = join(process.cwd(), path);
-  if (!fs.existsSync(path)) {
-    fs.mkdirSync(path, { recursive: true });
+  if (!existsSync(path)) {
+    await fs.mkdir(path, { recursive: true });
   }
   if (fileName.endsWith('.json')) {
     fileName = fileName.slice(0, -5);
   }
   path = join(path, fileName + '.json');
-  fs.writeFileSync(path, JSON.stringify(data, null, 2));
+  await fs.writeFile(path, JSON.stringify(data, null, 2));
   return path;
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

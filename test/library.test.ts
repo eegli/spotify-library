@@ -16,7 +16,7 @@ beforeEach(() => {
 
 describe('Library', () => {
   it('basic library', async () => {
-    process.argv = ['', '', '--token', '123', '--type', 'normal'];
+    process.argv = ['', '', '--token', '123x', '--type', 'normal'];
     mockAxios.get.mockResolvedValueOnce(RES_USER_SAVED_TRACKS);
     const res = await library();
     expect(mockAxios.get).toHaveBeenCalledTimes(1);
@@ -24,7 +24,7 @@ describe('Library', () => {
     expect(writeSpy).toHaveBeenCalledTimes(1);
   });
   it('with genres', async () => {
-    process.argv = ['', '', '--token', '123', '--genres'];
+    process.argv = ['', '', '--token', '123x', '--genres'];
     mockAxios.get
       .mockResolvedValueOnce(RES_USER_SAVED_TRACKS)
       .mockResolvedValueOnce(RES_MULTIPLE_ARTISTS);
@@ -33,7 +33,7 @@ describe('Library', () => {
     expect(res).toMatchSnapshot();
   });
   it('with audio features', async () => {
-    process.argv = ['', '', '--token', '123', '--features'];
+    process.argv = ['', '', '--token', '123x', '--features'];
     mockAxios.get
       .mockResolvedValueOnce(RES_USER_SAVED_TRACKS)
       .mockResolvedValueOnce(RES_MULTIPLE_AUDIO_FEATURES);
@@ -42,7 +42,7 @@ describe('Library', () => {
     expect(res).toMatchSnapshot();
   });
   it('with all', async () => {
-    process.argv = ['', '', '--token', '123', '--features', '--genres'];
+    process.argv = ['', '', '--token', '123x', '--features', '--genres'];
     mockAxios.get
       .mockResolvedValueOnce(RES_USER_SAVED_TRACKS)
       .mockResolvedValueOnce(RES_MULTIPLE_ARTISTS)
@@ -52,7 +52,7 @@ describe('Library', () => {
     expect(res).toMatchSnapshot();
   });
   it('throws', async () => {
-    process.argv = ['', '', '--token', '123'];
+    process.argv = ['', '', '--token', '123x'];
     // No axios response
     await expect(library()).rejects.toThrow();
   });
