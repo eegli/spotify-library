@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createConfig } from './config';
+import { parseConfig } from './config';
 import type {
   Library,
   MultipleArtists,
@@ -11,7 +11,7 @@ import type {
 import { chunkify, createProgressBar, goodbye, write } from './utils';
 
 export async function library(): Promise<Library<TrackLight | TrackFull>> {
-  const config = createConfig(process.argv.slice(2));
+  const config = await parseConfig(process.argv.slice(2));
   try {
     let library: Library<TrackFull | TrackLight> = [];
     let progress = createProgressBar('user library');
