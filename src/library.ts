@@ -78,7 +78,7 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
       // Max 50 items per request to Spotify
       const chunkSize = 50;
 
-      progress = createProgressBar('artists');
+      progress = createProgressBar('artists (genres)');
       progress.start(artistIds.size, 0);
 
       for await (const chunk of chunkify(artistIds, chunkSize)) {
@@ -137,7 +137,7 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
       });
     }
 
-    const outDir = write(config.outDir, 'spotify-library', library);
+    const outDir = await write(config.outDir, 'spotify-library', library);
     console.info("Success! Library written to '%s'", outDir);
     return library;
   } catch (e) {
