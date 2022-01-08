@@ -2,13 +2,6 @@ import cliProgress from 'cli-progress';
 import { existsSync, promises as fs } from 'fs';
 import { join } from 'path';
 
-export function hasOwnProperty<
-  T extends Record<PropertyKey, unknown>,
-  K extends PropertyKey
->(obj: T, prop: K): obj is T & Record<K, unknown> {
-  return Object.prototype.hasOwnProperty.call(obj, prop);
-}
-
 export async function write(
   path: string,
   fileName: string,
