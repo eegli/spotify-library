@@ -78,7 +78,7 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
       // Max 50 items per request to Spotify
       const chunkSize = 50;
 
-      progress = createProgressBar('artists (genres)');
+      progress = createProgressBar('artists');
       progress.start(artistIds.size, 0);
 
       for await (const chunk of chunkify(artistIds, chunkSize)) {
