@@ -4,7 +4,7 @@ type PickActual<T, P extends keyof T> = T[P];
 
 export type AppConfig = {
   token: string;
-  type: 'full' | 'normal';
+  type: 'full' | 'light';
   genres: boolean;
   features: boolean;
   outDir: string;
@@ -25,7 +25,15 @@ export type TrackLight = {
 
 export type TrackFull = PickActual<SpotifyApi.SavedTrackObject, 'track'>;
 
-export type Library<T> = {
+export type LibraryExport<T> = {
+  meta: {
+    date_generated: string;
+    output_type: PickActual<AppConfig, 'type'>;
+  };
+  library: Library<T>;
+};
+
+export type Library<T = unknown> = {
   added_at: string;
   track: T & {
     genres?: string[][];

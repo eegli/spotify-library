@@ -20,19 +20,31 @@ Also be aware that Spotify authentication tokens expire after 1h.
 npx spotify-library@latest --token <your-spotify-token>
 ```
 
-This will download your Spotify library in a "light" format to the current working directory. Pass in different options to download the full library (all properties) and/or get the derived track genres and audio features as well.
+This will download your Spotify library in a `light` format to the current working directory. Pass in different options to download the full library (all properties) and/or get the derived track genres and audio features as well.
 
-### CLI options
+### Options
 
-| Flag         | Required (default, [opts])   | Description                                                 |
-| ------------ | ---------------------------- | ----------------------------------------------------------- |
-| `--token`    | ✅                           | Spotify authentication token                                |
-| `--type`     | ❌ - `normal` (opts: `full`) | Full or "light" library output                              |
-| `--genres`   | ❌ - n.a.                    | Append if you want genres                                   |
-| `--features` | ❌ - n.a.                    | Append if you want audio features                           |
-| `--outDir`   | ❌ - `""`                    | Custom output directory relative to where the script is run |
+| Flag         | **_(required?)_** Description, [opts?]                                    |
+| ------------ | ------------------------------------------------------------------------- |
+| `--token`    | ✅ Spotify authentication token                                           |
+| `--type`     | ❌ Track format. Options: `full` \| `light`. Defaults to `light`          |
+| `--genres`   | ❌ Appends derived artist genres to saved tracks. Not included by default |
+| `--features` | ❌ Appends audio features to saved tracks. Not included by default        |
+| `--outDir`   | ❌ Custom output directory relative to where the script is run            |
 
-The "light" output has the following track properties:
+### Usage
+
+```bash
+# light track output
+npx spotify-library@latest --token 123token
+```
+
+```bash
+# full track output
+npx spotify-library@latest --type full --genres --features  --outDir spotify-data --token 123token
+```
+
+A `light` track has a reduced set of properties:
 
 ```ts
 type TrackLight = {
@@ -49,21 +61,9 @@ type TrackLight = {
 };
 ```
 
+The `full` has all the track properties from the Spotify API.
+
 Example outputs:
 
 - [Light library with genres and features](examples/library-light.json)
 - [Full library with genres and features](examples/library-full.json)
-
-### Example incovations
-
-- "Light" output only
-
-```bash
-npx spotify-library@latest --token 123token
-```
-
-- Full library with genres and audio features
-
-```bash
-npx spotify-library@latest --type full --genres --features  --outDir spotify-data --token 123token
-```

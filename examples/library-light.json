@@ -1,57 +1,58 @@
 {
-  "added_at": "2019-09-04T14:53:07Z",
-  "track": {
-    "id": "2L67zkeyUfp5eNYruHau2j",
-    "name": "Higher Ground - Flight Facilities Remix",
-    "album": {
-      "id": "2r6NDBw2dtOsnaiSaQGGzn",
-      "name": "Higher Ground Remixes"
-    },
-    "artists": [
-      {
-        "id": "21mKp7DqtSNHhCAU2ugvUw",
-        "name": "ODESZA"
-      },
-      {
-        "id": "5EBlHXi71tDXnFtroEh7Rg",
-        "name": "Naomi Wild"
-      },
-      {
-        "id": "1lc8mnyGrCLtPhCoWjRxjM",
-        "name": "Flight Facilities"
+  "meta": {
+    "date_generated": "2022-01-09T09:19:57.534Z",
+    "output_type": "light"
+  },
+  "library": [
+    {
+      "added_at": "2021-12-06T17:17:57Z",
+      "track": {
+        "id": "6X6Ow0iioCrYQSK1QDHQbC",
+        "name": "The Age Of Love - Charlotte de Witte & Enrico Sangiuliano Remix",
+        "album": {
+          "id": "6Ozmnoay8pclUfUO8CWKLU",
+          "name": "The Age Of Love (Charlotte de Witte & Enrico Sangiuliano Remix)"
+        },
+        "artists": [
+          {
+            "id": "03tes5RhEvH2dX2eDeGnRn",
+            "name": "Age Of Love"
+          },
+          {
+            "id": "1lJhME1ZpzsEa5M0wW6Mso",
+            "name": "Charlotte de Witte"
+          },
+          {
+            "id": "1u7DsNFbakULvxnDGtMm90",
+            "name": "Enrico Sangiuliano"
+          }
+        ],
+        "genres": [
+          ["bubble trance"],
+          ["belgian techno", "electra"],
+          ["dark techno", "italian techno", "minimal techno", "tech house"]
+        ],
+        "features": {
+          "danceability": 0.748,
+          "energy": 0.909,
+          "key": 5,
+          "loudness": -8.322,
+          "mode": 0,
+          "speechiness": 0.0505,
+          "acousticness": 0.0576,
+          "instrumentalness": 0.89,
+          "liveness": 0.0945,
+          "valence": 0.0617,
+          "tempo": 130,
+          "type": "audio_features",
+          "id": "6X6Ow0iioCrYQSK1QDHQbC",
+          "uri": "spotify:track:6X6Ow0iioCrYQSK1QDHQbC",
+          "track_href": "https://api.spotify.com/v1/tracks/6X6Ow0iioCrYQSK1QDHQbC",
+          "analysis_url": "https://api.spotify.com/v1/audio-analysis/6X6Ow0iioCrYQSK1QDHQbC",
+          "duration_ms": 489480,
+          "time_signature": 4
+        }
       }
-    ],
-    "genres": [
-      ["chillwave", "ninja"],
-      ["indie electropop"],
-      [
-        "alternative dance",
-        "aussietronica",
-        "australian dance",
-        "australian indie",
-        "indie soul",
-        "nu disco"
-      ]
-    ],
-    "features": {
-      "danceability": 0.663,
-      "energy": 0.908,
-      "key": 6,
-      "loudness": -5.944,
-      "mode": 1,
-      "speechiness": 0.0334,
-      "acousticness": 0.00477,
-      "instrumentalness": 0.203,
-      "liveness": 0.0723,
-      "valence": 0.544,
-      "tempo": 118.013,
-      "type": "audio_features",
-      "id": "2L67zkeyUfp5eNYruHau2j",
-      "uri": "spotify:track:2L67zkeyUfp5eNYruHau2j",
-      "track_href": "https://api.spotify.com/v1/tracks/2L67zkeyUfp5eNYruHau2j",
-      "analysis_url": "https://api.spotify.com/v1/audio-analysis/2L67zkeyUfp5eNYruHau2j",
-      "duration_ms": 220882,
-      "time_signature": 4
     }
-  }
+  ]
 }

@@ -3,7 +3,7 @@ import { AppConfig } from './types';
 
 export const defaultConfig: AppConfig = {
   token: '',
-  type: 'normal',
+  type: 'light',
   genres: false,
   features: false,
   outDir: '',
