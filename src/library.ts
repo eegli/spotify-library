@@ -3,6 +3,7 @@ import axios from 'axios';
 import { parseConfig } from './config';
 import type {
   Library,
+  LibraryExport,
   MultipleArtists,
   MultipleAudioFeatures,
   TrackFull,
@@ -10,10 +11,18 @@ import type {
   UsersSavedTracks,
 } from './types';
 import { chunkify, createProgressBar, goodbye, write } from './utils';
-export async function library(): Promise<Library<TrackLight | TrackFull>> {
+export async function library(): Promise<
+  LibraryExport<TrackLight | TrackFull>
+> {
   try {
     const config = await parseConfig(process.argv.slice(2));
-    let library: Library<TrackFull | TrackLight> = [];
+    const lib: LibraryExport<TrackFull | TrackLight> = {
+      meta: {
+        date_generated: new Date().toISOString(),
+        output_type: config.type,
+      },
+      library: [],
+    };
     let progress = createProgressBar('user library');
 
     const pagination = {
@@ -37,7 +46,7 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
       progress.increment(data.items.length);
 
       data.items.forEach(el => {
-        library.push(el);
+        lib.library.push(el);
       });
 
       pagination.nextUrl = data.next;
@@ -48,8 +57,8 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
     progress.stop();
 
     // Reduce library if necessary
-    if (config.type === 'normal') {
-      library = library.reduce((acc, curr) => {
+    if (config.type === 'light') {
+      lib.library = lib.library.reduce((acc, curr) => {
         acc.push({
           added_at: curr.added_at,
           track: {
@@ -71,7 +80,9 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
 
     // Add genres if specified
     if (config.genres) {
-      const artists = library.map(t => t.track.artists.map(a => a.id)).flat();
+      const artists = lib.library
+        .map(t => t.track.artists.map(a => a.id))
+        .flat();
       const artistIds = new Set<string>(artists);
       const genres: Record<string, string[]> = {};
 
@@ -99,14 +110,14 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
         progress.increment(chunkSize);
       }
       progress.stop();
-      library.forEach(({ track }) => {
+      lib.library.forEach(({ track }) => {
         track.genres = track.artists.map(({ id }) => genres[id]);
       });
     }
 
     // Add audio features if specified
     if (config.features) {
-      const songIds = library.map(t => t.track.id);
+      const songIds = lib.library.map(t => t.track.id);
       const features: Record<string, SpotifyApi.AudioFeaturesObject> = {};
 
       const chunkSize = 50;
@@ -132,14 +143,14 @@ export async function library(): Promise<Library<TrackLight | TrackFull>> {
         progress.increment(chunkSize);
       }
       progress.stop();
-      library.forEach(({ track }) => {
+      lib.library.forEach(({ track }) => {
         track.features = features[track.id];
       });
     }
 
-    const outDir = await write(config.outDir, 'spotify-library', library);
+    const outDir = await write(config.outDir, 'spotify-library', lib);
     console.info("Success! Library written to '%s'", outDir);
-    return library;
+    return lib;
   } catch (e) {
     if (e instanceof ValidationError) {
       goodbye(e.message);

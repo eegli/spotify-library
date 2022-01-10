@@ -1,465 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Library gets library 1`] = `
-Array [
-  Object {
-    "added_at": "2021-09-30T22:04:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "0vlWyzbAl3ff9b3zout1XQ",
-        "name": "Stay With Me",
-      },
-      "artists": Array [
-        Object {
-          "id": "5Ho1vKl1Uz8bJlk4vbmvmf",
-          "name": "Amelie Lens",
-        },
-      ],
-      "id": "5UsfWcP6SThHlZ4oAgx7ge",
-      "name": "Follow",
+exports[`Library gets light library: light track 1`] = `
+Object {
+  "added_at": "2021-09-30T22:04:57Z",
+  "track": Object {
+    "album": Object {
+      "id": "0vlWyzbAl3ff9b3zout1XQ",
+      "name": "Stay With Me",
     },
-  },
-  Object {
-    "added_at": "2021-12-06T17:17:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "6Ozmnoay8pclUfUO8CWKLU",
-        "name": "The Age Of Love (Charlotte de Witte & Enrico Sangiuliano Remix)",
+    "artists": Array [
+      Object {
+        "id": "5Ho1vKl1Uz8bJlk4vbmvmf",
+        "name": "Amelie Lens",
       },
-      "artists": Array [
-        Object {
-          "id": "03tes5RhEvH2dX2eDeGnRn",
-          "name": "Age Of Love",
-        },
-        Object {
-          "id": "1lJhME1ZpzsEa5M0wW6Mso",
-          "name": "Charlotte de Witte",
-        },
-        Object {
-          "id": "1u7DsNFbakULvxnDGtMm90",
-          "name": "Enrico Sangiuliano",
-        },
-      ],
-      "id": "6X6Ow0iioCrYQSK1QDHQbC",
-      "name": "The Age Of Love - Charlotte de Witte & Enrico Sangiuliano Remix",
-    },
+    ],
+    "id": "5UsfWcP6SThHlZ4oAgx7ge",
+    "name": "Follow",
   },
-  Object {
-    "added_at": "2021-10-18T08:15:08Z",
-    "track": Object {
-      "album": Object {
-        "id": "046wH7DEfUumC5h9ykIEkd",
-        "name": "bb u ok?",
-      },
-      "artists": Array [
-        Object {
-          "id": "0jNDKefhfSbLR9sFvcPLHo",
-          "name": "San Holo",
-        },
-        Object {
-          "id": "1BjaGDkxwa2fb2pSCXlFXb",
-          "name": "Chet Porter",
-        },
-      ],
-      "id": "3LnoLo62GjfKDYIN7eJpPB",
-      "name": "you’ve changed, i’ve changed",
-    },
-  },
-]
+}
 `;
 
-exports[`Library with all 1`] = `
-Array [
-  Object {
-    "added_at": "2021-09-30T22:04:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "0vlWyzbAl3ff9b3zout1XQ",
-        "name": "Stay With Me",
-      },
-      "artists": Array [
-        Object {
-          "id": "5Ho1vKl1Uz8bJlk4vbmvmf",
-          "name": "Amelie Lens",
-        },
-      ],
-      "features": Object {
-        "acousticness": 0.0375,
-        "analysis_url": "https://api.spotify.com/v1/audio-analysis/5UsfWcP6SThHlZ4oAgx7ge",
-        "danceability": 0.725,
-        "duration_ms": 337500,
-        "energy": 0.908,
-        "id": "5UsfWcP6SThHlZ4oAgx7ge",
-        "instrumentalness": 0.822,
-        "key": 7,
-        "liveness": 0.108,
-        "loudness": -8.798,
-        "mode": 1,
-        "speechiness": 0.0345,
-        "tempo": 128.006,
-        "time_signature": 4,
-        "track_href": "https://api.spotify.com/v1/tracks/5UsfWcP6SThHlZ4oAgx7ge",
-        "type": "audio_features",
-        "uri": "spotify:track:5UsfWcP6SThHlZ4oAgx7ge",
-        "valence": 0.134,
-      },
-      "genres": Array [
-        Array [
-          "acid techno",
-          "belgian techno",
-          "dark techno",
-          "electra",
-        ],
-      ],
-      "id": "5UsfWcP6SThHlZ4oAgx7ge",
-      "name": "Follow",
-    },
-  },
-  Object {
-    "added_at": "2021-12-06T17:17:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "6Ozmnoay8pclUfUO8CWKLU",
-        "name": "The Age Of Love (Charlotte de Witte & Enrico Sangiuliano Remix)",
-      },
-      "artists": Array [
-        Object {
-          "id": "03tes5RhEvH2dX2eDeGnRn",
-          "name": "Age Of Love",
-        },
-        Object {
-          "id": "1lJhME1ZpzsEa5M0wW6Mso",
-          "name": "Charlotte de Witte",
-        },
-        Object {
-          "id": "1u7DsNFbakULvxnDGtMm90",
-          "name": "Enrico Sangiuliano",
-        },
-      ],
-      "features": Object {
-        "acousticness": 0.0576,
-        "analysis_url": "https://api.spotify.com/v1/audio-analysis/6X6Ow0iioCrYQSK1QDHQbC",
-        "danceability": 0.748,
-        "duration_ms": 489480,
-        "energy": 0.909,
-        "id": "6X6Ow0iioCrYQSK1QDHQbC",
-        "instrumentalness": 0.89,
-        "key": 5,
-        "liveness": 0.0945,
-        "loudness": -8.322,
-        "mode": 0,
-        "speechiness": 0.0505,
-        "tempo": 130,
-        "time_signature": 4,
-        "track_href": "https://api.spotify.com/v1/tracks/6X6Ow0iioCrYQSK1QDHQbC",
-        "type": "audio_features",
-        "uri": "spotify:track:6X6Ow0iioCrYQSK1QDHQbC",
-        "valence": 0.0617,
-      },
-      "genres": Array [
-        Array [
-          "bubble trance",
-        ],
-        Array [
-          "belgian techno",
-          "electra",
-        ],
-        Array [
-          "dark techno",
-          "italian techno",
-          "minimal techno",
-        ],
-      ],
-      "id": "6X6Ow0iioCrYQSK1QDHQbC",
-      "name": "The Age Of Love - Charlotte de Witte & Enrico Sangiuliano Remix",
-    },
-  },
-  Object {
-    "added_at": "2021-10-18T08:15:08Z",
-    "track": Object {
-      "album": Object {
-        "id": "046wH7DEfUumC5h9ykIEkd",
-        "name": "bb u ok?",
-      },
-      "artists": Array [
-        Object {
-          "id": "0jNDKefhfSbLR9sFvcPLHo",
-          "name": "San Holo",
-        },
-        Object {
-          "id": "1BjaGDkxwa2fb2pSCXlFXb",
-          "name": "Chet Porter",
-        },
-      ],
-      "features": Object {
-        "acousticness": 0.123,
-        "analysis_url": "https://api.spotify.com/v1/audio-analysis/3LnoLo62GjfKDYIN7eJpPB",
-        "danceability": 0.416,
-        "duration_ms": 311625,
-        "energy": 0.615,
-        "id": "3LnoLo62GjfKDYIN7eJpPB",
-        "instrumentalness": 0.00171,
-        "key": 5,
-        "liveness": 0.273,
-        "loudness": -7.898,
-        "mode": 1,
-        "speechiness": 0.0452,
-        "tempo": 130.228,
-        "time_signature": 4,
-        "track_href": "https://api.spotify.com/v1/tracks/3LnoLo62GjfKDYIN7eJpPB",
-        "type": "audio_features",
-        "uri": "spotify:track:3LnoLo62GjfKDYIN7eJpPB",
-        "valence": 0.181,
-      },
-      "genres": Array [
-        Array [
-          "edm",
-          "electronic trap",
-          "electropop",
-          "future bass",
-          "pop dance",
-          "pop edm",
-          "vapor twitch",
-        ],
-        Array [
-          "vapor twitch",
-        ],
-      ],
-      "id": "3LnoLo62GjfKDYIN7eJpPB",
-      "name": "you’ve changed, i’ve changed",
-    },
-  },
-]
+exports[`Library with audio features: features 1`] = `
+Object {
+  "acousticness": 0.0375,
+  "analysis_url": "https://api.spotify.com/v1/audio-analysis/5UsfWcP6SThHlZ4oAgx7ge",
+  "danceability": 0.725,
+  "duration_ms": 337500,
+  "energy": 0.908,
+  "id": "5UsfWcP6SThHlZ4oAgx7ge",
+  "instrumentalness": 0.822,
+  "key": 7,
+  "liveness": 0.108,
+  "loudness": -8.798,
+  "mode": 1,
+  "speechiness": 0.0345,
+  "tempo": 128.006,
+  "time_signature": 4,
+  "track_href": "https://api.spotify.com/v1/tracks/5UsfWcP6SThHlZ4oAgx7ge",
+  "type": "audio_features",
+  "uri": "spotify:track:5UsfWcP6SThHlZ4oAgx7ge",
+  "valence": 0.134,
+}
 `;
 
-exports[`Library with audio features 1`] = `
+exports[`Library with genres: genres 1`] = `
 Array [
-  Object {
-    "added_at": "2021-09-30T22:04:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "0vlWyzbAl3ff9b3zout1XQ",
-        "name": "Stay With Me",
-      },
-      "artists": Array [
-        Object {
-          "id": "5Ho1vKl1Uz8bJlk4vbmvmf",
-          "name": "Amelie Lens",
-        },
-      ],
-      "features": Object {
-        "acousticness": 0.0375,
-        "analysis_url": "https://api.spotify.com/v1/audio-analysis/5UsfWcP6SThHlZ4oAgx7ge",
-        "danceability": 0.725,
-        "duration_ms": 337500,
-        "energy": 0.908,
-        "id": "5UsfWcP6SThHlZ4oAgx7ge",
-        "instrumentalness": 0.822,
-        "key": 7,
-        "liveness": 0.108,
-        "loudness": -8.798,
-        "mode": 1,
-        "speechiness": 0.0345,
-        "tempo": 128.006,
-        "time_signature": 4,
-        "track_href": "https://api.spotify.com/v1/tracks/5UsfWcP6SThHlZ4oAgx7ge",
-        "type": "audio_features",
-        "uri": "spotify:track:5UsfWcP6SThHlZ4oAgx7ge",
-        "valence": 0.134,
-      },
-      "id": "5UsfWcP6SThHlZ4oAgx7ge",
-      "name": "Follow",
-    },
-  },
-  Object {
-    "added_at": "2021-12-06T17:17:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "6Ozmnoay8pclUfUO8CWKLU",
-        "name": "The Age Of Love (Charlotte de Witte & Enrico Sangiuliano Remix)",
-      },
-      "artists": Array [
-        Object {
-          "id": "03tes5RhEvH2dX2eDeGnRn",
-          "name": "Age Of Love",
-        },
-        Object {
-          "id": "1lJhME1ZpzsEa5M0wW6Mso",
-          "name": "Charlotte de Witte",
-        },
-        Object {
-          "id": "1u7DsNFbakULvxnDGtMm90",
-          "name": "Enrico Sangiuliano",
-        },
-      ],
-      "features": Object {
-        "acousticness": 0.0576,
-        "analysis_url": "https://api.spotify.com/v1/audio-analysis/6X6Ow0iioCrYQSK1QDHQbC",
-        "danceability": 0.748,
-        "duration_ms": 489480,
-        "energy": 0.909,
-        "id": "6X6Ow0iioCrYQSK1QDHQbC",
-        "instrumentalness": 0.89,
-        "key": 5,
-        "liveness": 0.0945,
-        "loudness": -8.322,
-        "mode": 0,
-        "speechiness": 0.0505,
-        "tempo": 130,
-        "time_signature": 4,
-        "track_href": "https://api.spotify.com/v1/tracks/6X6Ow0iioCrYQSK1QDHQbC",
-        "type": "audio_features",
-        "uri": "spotify:track:6X6Ow0iioCrYQSK1QDHQbC",
-        "valence": 0.0617,
-      },
-      "id": "6X6Ow0iioCrYQSK1QDHQbC",
-      "name": "The Age Of Love - Charlotte de Witte & Enrico Sangiuliano Remix",
-    },
-  },
-  Object {
-    "added_at": "2021-10-18T08:15:08Z",
-    "track": Object {
-      "album": Object {
-        "id": "046wH7DEfUumC5h9ykIEkd",
-        "name": "bb u ok?",
-      },
-      "artists": Array [
-        Object {
-          "id": "0jNDKefhfSbLR9sFvcPLHo",
-          "name": "San Holo",
-        },
-        Object {
-          "id": "1BjaGDkxwa2fb2pSCXlFXb",
-          "name": "Chet Porter",
-        },
-      ],
-      "features": Object {
-        "acousticness": 0.123,
-        "analysis_url": "https://api.spotify.com/v1/audio-analysis/3LnoLo62GjfKDYIN7eJpPB",
-        "danceability": 0.416,
-        "duration_ms": 311625,
-        "energy": 0.615,
-        "id": "3LnoLo62GjfKDYIN7eJpPB",
-        "instrumentalness": 0.00171,
-        "key": 5,
-        "liveness": 0.273,
-        "loudness": -7.898,
-        "mode": 1,
-        "speechiness": 0.0452,
-        "tempo": 130.228,
-        "time_signature": 4,
-        "track_href": "https://api.spotify.com/v1/tracks/3LnoLo62GjfKDYIN7eJpPB",
-        "type": "audio_features",
-        "uri": "spotify:track:3LnoLo62GjfKDYIN7eJpPB",
-        "valence": 0.181,
-      },
-      "id": "3LnoLo62GjfKDYIN7eJpPB",
-      "name": "you’ve changed, i’ve changed",
-    },
-  },
-]
-`;
-
-exports[`Library with genres 1`] = `
-Array [
-  Object {
-    "added_at": "2021-09-30T22:04:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "0vlWyzbAl3ff9b3zout1XQ",
-        "name": "Stay With Me",
-      },
-      "artists": Array [
-        Object {
-          "id": "5Ho1vKl1Uz8bJlk4vbmvmf",
-          "name": "Amelie Lens",
-        },
-      ],
-      "genres": Array [
-        Array [
-          "acid techno",
-          "belgian techno",
-          "dark techno",
-          "electra",
-        ],
-      ],
-      "id": "5UsfWcP6SThHlZ4oAgx7ge",
-      "name": "Follow",
-    },
-  },
-  Object {
-    "added_at": "2021-12-06T17:17:57Z",
-    "track": Object {
-      "album": Object {
-        "id": "6Ozmnoay8pclUfUO8CWKLU",
-        "name": "The Age Of Love (Charlotte de Witte & Enrico Sangiuliano Remix)",
-      },
-      "artists": Array [
-        Object {
-          "id": "03tes5RhEvH2dX2eDeGnRn",
-          "name": "Age Of Love",
-        },
-        Object {
-          "id": "1lJhME1ZpzsEa5M0wW6Mso",
-          "name": "Charlotte de Witte",
-        },
-        Object {
-          "id": "1u7DsNFbakULvxnDGtMm90",
-          "name": "Enrico Sangiuliano",
-        },
-      ],
-      "genres": Array [
-        Array [
-          "bubble trance",
-        ],
-        Array [
-          "belgian techno",
-          "electra",
-        ],
-        Array [
-          "dark techno",
-          "italian techno",
-          "minimal techno",
-        ],
-      ],
-      "id": "6X6Ow0iioCrYQSK1QDHQbC",
-      "name": "The Age Of Love - Charlotte de Witte & Enrico Sangiuliano Remix",
-    },
-  },
-  Object {
-    "added_at": "2021-10-18T08:15:08Z",
-    "track": Object {
-      "album": Object {
-        "id": "046wH7DEfUumC5h9ykIEkd",
-        "name": "bb u ok?",
-      },
-      "artists": Array [
-        Object {
-          "id": "0jNDKefhfSbLR9sFvcPLHo",
-          "name": "San Holo",
-        },
-        Object {
-          "id": "1BjaGDkxwa2fb2pSCXlFXb",
-          "name": "Chet Porter",
-        },
-      ],
-      "genres": Array [
-        Array [
-          "edm",
-          "electronic trap",
-          "electropop",
-          "future bass",
-          "pop dance",
-          "pop edm",
-          "vapor twitch",
-        ],
-        Array [
-          "vapor twitch",
-        ],
-      ],
-      "id": "3LnoLo62GjfKDYIN7eJpPB",
-      "name": "you’ve changed, i’ve changed",
-    },
-  },
+  Array [
+    "acid techno",
+    "belgian techno",
+    "dark techno",
+    "electra",
+  ],
 ]
 `;

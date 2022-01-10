@@ -15,17 +15,32 @@ beforeEach(() => {
 });
 
 describe('Library', () => {
-  it('rejects on missing auth token', async () => {
+  it('throws for missing auth token', async () => {
     process.argv = ['', ''];
     await expect(library()).rejects.toThrow();
   });
-  it('gets library', async () => {
-    process.argv = ['', '', '--token', '123x', '--type', 'normal'];
+  it('throws for failed requests', async () => {
+    process.argv = ['', '', '--token', '123x'];
+    // No axios response
+    await expect(library()).rejects.toThrow();
+  });
+  it('gets light library', async () => {
+    process.argv = ['', '', '--token', '123x'];
     mockAxios.get.mockResolvedValueOnce(RES_USER_SAVED_TRACKS);
     const res = await library();
+    expect(res.meta.output_type).toBe('light');
+    expect(res.meta.date_generated).toEqual(expect.any(String));
+    expect(res.library[0]).toMatchSnapshot('light track');
     expect(mockAxios.get).toHaveBeenCalledTimes(1);
-    expect(res).toMatchSnapshot();
-    expect(writeSpy).toHaveBeenCalledTimes(1);
+  });
+  it('gets full library', async () => {
+    process.argv = ['', '', '--token', '123x', '--type', 'full'];
+    mockAxios.get.mockResolvedValueOnce(RES_USER_SAVED_TRACKS);
+    const res = await library();
+    expect(res.meta.output_type).toBe('full');
+    expect(res.meta.date_generated).toEqual(expect.any(String));
+    expect(res.library[0]).toMatchObject(RES_USER_SAVED_TRACKS.data.items[0]);
+    expect(mockAxios.get).toHaveBeenCalledTimes(1);
   });
   it('with genres', async () => {
     process.argv = ['', '', '--token', '123x', '--genres'];
@@ -33,8 +48,9 @@ describe('Library', () => {
       .mockResolvedValueOnce(RES_USER_SAVED_TRACKS)
       .mockResolvedValueOnce(RES_MULTIPLE_ARTISTS);
     const res = await library();
+    expect(res.library[0].track.genres).toBeTruthy();
+    expect(res.library[0].track.genres).toMatchSnapshot('genres');
     expect(mockAxios.get).toHaveBeenCalledTimes(2);
-    expect(res).toMatchSnapshot();
   });
   it('with audio features', async () => {
     process.argv = ['', '', '--token', '123x', '--features'];
@@ -42,22 +58,16 @@ describe('Library', () => {
       .mockResolvedValueOnce(RES_USER_SAVED_TRACKS)
       .mockResolvedValueOnce(RES_MULTIPLE_AUDIO_FEATURES);
     const res = await library();
+    expect(res.library[0].track.features).toBeTruthy();
+    expect(res.library[0].track.features).toMatchSnapshot('features');
     expect(mockAxios.get).toHaveBeenCalledTimes(2);
-    expect(res).toMatchSnapshot();
   });
-  it('with all', async () => {
-    process.argv = ['', '', '--token', '123x', '--features', '--genres'];
-    mockAxios.get
-      .mockResolvedValueOnce(RES_USER_SAVED_TRACKS)
-      .mockResolvedValueOnce(RES_MULTIPLE_ARTISTS)
-      .mockResolvedValueOnce(RES_MULTIPLE_AUDIO_FEATURES);
+  it('writes library', async () => {
+    process.argv = ['', '', '--token', '123x', '--outDir', '/spotify'];
+    mockAxios.get.mockResolvedValueOnce(RES_USER_SAVED_TRACKS);
     const res = await library();
-    expect(mockAxios.get).toHaveBeenCalledTimes(3);
-    expect(res).toMatchSnapshot();
-  });
-  it('throws', async () => {
-    process.argv = ['', '', '--token', '123x'];
-    // No axios response
-    await expect(library()).rejects.toThrow();
+    expect(writeSpy.mock.calls[0][0]).toBe('/spotify');
+    expect(writeSpy.mock.calls[0][1]).toBe('spotify-library');
+    expect(writeSpy.mock.calls[0][2]).toEqual(res);
   });
 });
