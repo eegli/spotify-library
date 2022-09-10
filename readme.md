@@ -2,8 +2,8 @@
 
 ## @Deprecated
 
-This repo has been sunset and is now part of [eegli/spotifly](https://github.com/eegli/spotifly).
+This repo has been sunset and merged into the [eegli/spotifly](https://github.com/eegli/spotifly) monorepo.
 
-The package is now available as [@spotifly/auth-token](https://spotifly.nougat.dev/docs/packages/auth-token).
+Spotify Library is now [available as part of the Spotifly CLI](https://spotifly.nougat.dev/docs/packages/library).
 
 Cheers!
